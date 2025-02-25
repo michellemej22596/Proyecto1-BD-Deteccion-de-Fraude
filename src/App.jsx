@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ScrollButton from '@components/ScrollButton'; 
+import NavBar from '@components/Navbar'; 
 import Footer from '@components/Footer'; 
 import { Hourglass } from 'react-loader-spinner'; 
 
@@ -32,6 +33,7 @@ function App() {
         </div>
         :
         <div className="bg-stone-950 font-serif">
+          <NavBar />
           <ScrollButton />
           <Footer />
         </div>
