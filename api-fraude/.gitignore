@@ -1,0 +1,20 @@
+# Ignorar el entorno virtual
+venv/
+
+# Archivos de configuración y credenciales
+.env
+
+# Archivos de caché y temporales
+__pycache__/
+*.pyc
+*.pyo
+
+# Configuración del editor
+.vscode/
+.idea/
+.DS_Store
+
+# Archivos de logs y base de datos
+db.sqlite3
+logs/
+*.log

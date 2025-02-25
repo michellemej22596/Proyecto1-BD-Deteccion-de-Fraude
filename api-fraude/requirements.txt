@@ -1,0 +1,7 @@
+### requirements.txt
+fastapi
+uvicorn
+neo4j
+dotenv
+pydantic
+
