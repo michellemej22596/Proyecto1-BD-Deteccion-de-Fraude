@@ -1,6 +1,6 @@
 CORS_ORIGINS = [
-    "http://localhost:3000",  # React local
-    "http://127.0.0.1:3000",  # Alternativa local
+    "http://localhost:5173",  # React local
+    "http://127.0.0.1:5173",  # Alternativa local
     "https://mi-dominio.com"  # Producción (ACTUALIZAR SI SE PUBLICA FRONT)
 ]
 
