@@ -1,7 +1,18 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.routes import clientes, transacciones, fraude
+from app.config import CORS_ORIGINS, CORS_ALLOW_CREDENTIALS, CORS_ALLOW_METHODS, CORS_ALLOW_HEADERS
 
 app = FastAPI(title="API de Detección de Fraude", version="1.0")
+
+# Aplicar configuración de CORS desde config.py
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=CORS_ORIGINS,
+    allow_credentials=CORS_ALLOW_CREDENTIALS,
+    allow_methods=CORS_ALLOW_METHODS,
+    allow_headers=CORS_ALLOW_HEADERS,
+)
 
 # Registrar rutas
 app.include_router(clientes.router, prefix="/clientes", tags=["Clientes"])
@@ -11,6 +22,3 @@ app.include_router(fraude.router, prefix="/fraude", tags=["Fraude"])
 @app.get("/")
 def home():
     return {"message": "Bienvenido a la API de Detección de Fraude"}
-
-# Para correr la API en local:
-# uvicorn app.main:app --reload
