@@ -20,7 +20,7 @@ function App() {
   return (
     <> 
       {
-        loading ?
+        loading ? 
         <div className='bg-stone-950 h-screen flex justify-center items-center'>
           <Hourglass
             visible={true}
@@ -29,19 +29,23 @@ function App() {
             ariaLabel="hourglass-loading"
             wrapperStyle={{}}
             wrapperClass=""
-            colors={['rgb(199 52 58)', 'rgb(255 225 217)']}
+            colors={['rgb(199 52 58)', 'rgb(159, 131, 120)']}
           />
-        </div>
+        </div> 
         :
-        <div className="bg-stone-950 font-serif">
-          <NavBar />
-          <Dashboard />
-          <ScrollButton />
+        <div className="bg-stone-950 font-serif h-screen flex flex-col justify-between"> 
+          <div className="flex-grow">
+            <NavBar />
+            <Dashboard />
+            <ScrollButton />
+          </div>
+          <div>
           <Footer />
+          </div>
         </div>
       }
     </>
   );
 }
 
-export default App
+export default App;

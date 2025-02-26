@@ -2,11 +2,11 @@ import { Card, CardContent } from "@components/ui/card";
 
 const StatCard = ({ title, value, icon: Icon }) => {
   return (
-    <Card className="p-4 flex items-center space-x-4 shadow-lg">
-      {Icon && <Icon className="w-10 h-10 text-blue-500" />}
+    <Card className="p-6 flex items-center space-x-6 shadow-lg border border-gray-200 rounded-lg">
+      {Icon && <Icon className="w-14 h-14 text-blue-500" />}
       <div>
-        <p className="text-gray-600 text-sm">{title}</p>
-        <p className="text-xl font-bold">{value}</p>
+        <p className="text-gray-700 text-sm">{title}</p>
+        <p className="text-2xl font-semibold text-gray-900">{value}</p>
       </div>
     </Card>
   );
