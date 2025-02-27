@@ -1,18 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { IoMenu } from 'react-icons/io5';
 import ScrollButton from '@components/ScrollButton'; 
 import NavBar from '@components/Navbar'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Cambiado Switch por Routes
 import Footer from '@components/Footer'; 
-import Dashboard from '@views/Dashboard';
 import { Hourglass } from 'react-loader-spinner'; 
+import Home from '@views/Home';
+import Create from '@views/Create';
+import Read from '@views/Read';
+import Update from '@views/Update';
+import Delete from '@views/Delete';
+import './App.css';
 
 function App() {
   const [loading, setLoading] = useState(false);
+  const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3500);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -21,28 +29,34 @@ function App() {
     <> 
       {
         loading ? 
-        <div className='bg-stone-950 h-screen flex justify-center items-center'>
-          <Hourglass
-            visible={true}
-            height="80"
-            width="80"
-            ariaLabel="hourglass-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-            colors={['rgb(199 52 58)', 'rgb(159, 131, 120)']}
-          />
-        </div> 
-        :
-        <div className="bg-stone-950 font-serif h-screen flex flex-col justify-between"> 
-          <div className="flex-grow">
-            <NavBar />
-            <Dashboard />
-            <ScrollButton />
+  <div className="bg-stone-950 min-h-screen w-full flex justify-center items-center">
+    <Hourglass
+      visible={true}
+      height="100"
+      width="100"
+      ariaLabel="hourglass-loading"
+      colors={['#ffead9','#ffacca']}
+    />
+  </div>
+:
+        <Router>
+          <header>
+            <IoMenu onClick={() => setShowNav(!showNav)} />
+          </header>
+          
+          <NavBar show={showNav} />
+          <div className='main'>
+            <Routes> 
+              <Route path="/" element={<Home />} />  
+              <Route path="/create" element={<Create />} />  
+              <Route path="/read" element={<Read />} />  
+              <Route path="/update" element={<Update />} />  
+              <Route path="/delete" element={<Delete />} />  
+            </Routes>
           </div>
-          <div>
+
           <Footer />
-          </div>
-        </div>
+        </Router>      
       }
     </>
   );
