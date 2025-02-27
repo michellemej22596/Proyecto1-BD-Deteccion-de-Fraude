@@ -1,0 +1,301 @@
+Ubicacion_ID,Ciudad,País,Código_Postal,Nivel_Seguridad
+1,Ciudad de Guatemala,México,47453,Bajo
+2,Ciudad de México,Guatemala,18630,Medio
+3,Bogotá,Guatemala,10715,Bajo
+4,Ciudad de México,México,52423,Medio
+5,Bogotá,Guatemala,11325,Alto
+6,Ciudad de Guatemala,Guatemala,48396,Alto
+7,Ciudad de México,México,91853,Alto
+8,Bogotá,México,87963,Alto
+9,Ciudad de Guatemala,Colombia,88429,Medio
+10,Ciudad de México,Guatemala,46800,Alto
+11,Bogotá,Guatemala,42301,Medio
+12,Ciudad de Guatemala,Colombia,48003,Bajo
+13,Ciudad de México,Guatemala,76058,Medio
+14,Bogotá,Guatemala,26986,Bajo
+15,Ciudad de Guatemala,Colombia,17035,Alto
+16,Ciudad de Guatemala,Guatemala,89616,Alto
+17,Ciudad de México,México,13569,Bajo
+18,Ciudad de México,Colombia,24943,Medio
+19,Bogotá,Colombia,38864,Alto
+20,Ciudad de México,Guatemala,30069,Alto
+21,Bogotá,Colombia,13511,Bajo
+22,Ciudad de Guatemala,México,21216,Medio
+23,Ciudad de México,México,95561,Alto
+24,Bogotá,Guatemala,27142,Bajo
+25,Ciudad de Guatemala,Guatemala,58062,Medio
+26,Ciudad de México,México,61080,Medio
+27,Ciudad de México,México,40004,Bajo
+28,Ciudad de Guatemala,Colombia,14346,Bajo
+29,Ciudad de México,Guatemala,91185,Alto
+30,Ciudad de México,Colombia,93869,Bajo
+31,Ciudad de México,Guatemala,85501,Bajo
+32,Ciudad de Guatemala,Guatemala,99099,Medio
+33,Ciudad de México,Guatemala,20726,Alto
+34,Bogotá,México,76852,Medio
+35,Bogotá,Colombia,36128,Bajo
+36,Ciudad de Guatemala,Colombia,99262,Alto
+37,Ciudad de México,México,80230,Medio
+38,Bogotá,Guatemala,78200,Bajo
+39,Ciudad de México,Guatemala,93893,Bajo
+40,Ciudad de Guatemala,Colombia,24817,Alto
+41,Ciudad de México,Colombia,28900,Alto
+42,Ciudad de Guatemala,México,87047,Bajo
+43,Bogotá,Colombia,12480,Medio
+44,Ciudad de México,México,97554,Bajo
+45,Ciudad de México,Guatemala,71434,Bajo
+46,Ciudad de México,Guatemala,28750,Alto
+47,Bogotá,Colombia,68821,Bajo
+48,Ciudad de Guatemala,México,73217,Bajo
+49,Ciudad de Guatemala,Guatemala,81961,Medio
+50,Ciudad de México,Colombia,80518,Medio
+51,Ciudad de México,Guatemala,42765,Bajo
+52,Bogotá,Guatemala,11879,Alto
+53,Bogotá,México,48843,Medio
+54,Bogotá,Colombia,45557,Medio
+55,Bogotá,México,17702,Alto
+56,Ciudad de Guatemala,México,41606,Bajo
+57,Bogotá,Colombia,66352,Bajo
+58,Bogotá,México,85425,Alto
+59,Ciudad de Guatemala,Guatemala,97447,Bajo
+60,Ciudad de Guatemala,Colombia,19551,Bajo
+61,Ciudad de Guatemala,Guatemala,17758,Medio
+62,Bogotá,Guatemala,40778,Medio
+63,Bogotá,Guatemala,33921,Medio
+64,Ciudad de México,Guatemala,80095,Medio
+65,Bogotá,México,84519,Medio
+66,Ciudad de Guatemala,Guatemala,76225,Bajo
+67,Ciudad de Guatemala,Guatemala,44519,Alto
+68,Ciudad de México,Colombia,52540,Bajo
+69,Ciudad de Guatemala,México,19391,Bajo
+70,Ciudad de Guatemala,Colombia,27906,Medio
+71,Ciudad de Guatemala,México,96253,Medio
+72,Ciudad de Guatemala,México,67451,Bajo
+73,Ciudad de México,México,44169,Bajo
+74,Bogotá,Colombia,38272,Alto
+75,Ciudad de Guatemala,México,89767,Bajo
+76,Ciudad de Guatemala,Colombia,81109,Bajo
+77,Bogotá,Guatemala,58209,Bajo
+78,Ciudad de Guatemala,México,42254,Medio
+79,Ciudad de Guatemala,México,97795,Bajo
+80,Ciudad de México,México,26536,Alto
+81,Ciudad de México,México,16335,Bajo
+82,Bogotá,Colombia,39714,Bajo
+83,Ciudad de México,Guatemala,67313,Medio
+84,Bogotá,Guatemala,43149,Alto
+85,Ciudad de Guatemala,Guatemala,53184,Bajo
+86,Bogotá,Colombia,97061,Medio
+87,Bogotá,México,81011,Medio
+88,Ciudad de Guatemala,Colombia,68818,Alto
+89,Bogotá,Colombia,50510,Medio
+90,Ciudad de Guatemala,México,24326,Bajo
+91,Ciudad de México,México,69607,Bajo
+92,Ciudad de Guatemala,Guatemala,65074,Medio
+93,Bogotá,Guatemala,82109,Alto
+94,Ciudad de Guatemala,México,11844,Bajo
+95,Ciudad de Guatemala,Colombia,34457,Alto
+96,Bogotá,Colombia,46855,Alto
+97,Ciudad de México,Colombia,78277,Medio
+98,Ciudad de México,Colombia,19227,Bajo
+99,Ciudad de Guatemala,México,55931,Medio
+100,Ciudad de México,Colombia,94155,Medio
+101,Ciudad de Guatemala,Guatemala,55287,Alto
+102,Ciudad de México,México,16576,Alto
+103,Ciudad de México,México,97434,Bajo
+104,Ciudad de Guatemala,México,97884,Alto
+105,Ciudad de Guatemala,México,61466,Alto
+106,Bogotá,Colombia,59538,Alto
+107,Bogotá,Colombia,76995,Medio
+108,Bogotá,Colombia,92984,Medio
+109,Ciudad de México,Guatemala,32974,Alto
+110,Bogotá,México,45112,Alto
+111,Bogotá,Guatemala,91869,Alto
+112,Ciudad de México,Guatemala,60728,Alto
+113,Bogotá,Colombia,67023,Bajo
+114,Ciudad de México,México,39458,Medio
+115,Ciudad de Guatemala,Colombia,87477,Medio
+116,Ciudad de México,Colombia,20284,Alto
+117,Ciudad de México,Guatemala,52877,Medio
+118,Ciudad de Guatemala,Guatemala,32221,Bajo
+119,Bogotá,Guatemala,61992,Medio
+120,Ciudad de Guatemala,Guatemala,38256,Medio
+121,Bogotá,México,50687,Alto
+122,Ciudad de México,México,44895,Alto
+123,Ciudad de México,Colombia,60258,Bajo
+124,Ciudad de México,México,35272,Medio
+125,Bogotá,México,11299,Bajo
+126,Ciudad de México,Guatemala,96467,Alto
+127,Bogotá,Guatemala,69924,Bajo
+128,Ciudad de México,Guatemala,10233,Bajo
+129,Ciudad de México,México,72643,Alto
+130,Bogotá,Colombia,56547,Medio
+131,Ciudad de México,Guatemala,41719,Bajo
+132,Ciudad de Guatemala,México,69789,Bajo
+133,Ciudad de México,Colombia,10373,Medio
+134,Ciudad de México,México,72524,Bajo
+135,Ciudad de Guatemala,Colombia,41588,Bajo
+136,Ciudad de México,México,31608,Alto
+137,Ciudad de México,Guatemala,97312,Alto
+138,Ciudad de Guatemala,México,33561,Alto
+139,Ciudad de Guatemala,México,84330,Medio
+140,Bogotá,Guatemala,95491,Bajo
+141,Ciudad de Guatemala,Guatemala,29630,Alto
+142,Ciudad de México,México,19700,Medio
+143,Ciudad de Guatemala,Colombia,98096,Medio
+144,Ciudad de México,Colombia,33164,Medio
+145,Bogotá,Guatemala,39704,Bajo
+146,Bogotá,México,57185,Medio
+147,Bogotá,México,17331,Medio
+148,Ciudad de Guatemala,Colombia,70928,Bajo
+149,Ciudad de México,México,56433,Medio
+150,Ciudad de México,México,99988,Alto
+151,Ciudad de México,Guatemala,50541,Medio
+152,Bogotá,Guatemala,55459,Medio
+153,Bogotá,Guatemala,82590,Medio
+154,Bogotá,México,24103,Alto
+155,Bogotá,Guatemala,51902,Bajo
+156,Ciudad de Guatemala,México,45715,Medio
+157,Ciudad de México,México,20088,Alto
+158,Bogotá,Colombia,13668,Bajo
+159,Ciudad de Guatemala,México,24083,Medio
+160,Bogotá,Colombia,75481,Medio
+161,Ciudad de Guatemala,Guatemala,21873,Alto
+162,Ciudad de Guatemala,Colombia,97739,Medio
+163,Ciudad de Guatemala,México,90882,Bajo
+164,Ciudad de México,México,93438,Medio
+165,Ciudad de Guatemala,México,25863,Bajo
+166,Ciudad de Guatemala,Guatemala,94976,Bajo
+167,Ciudad de México,Colombia,65948,Medio
+168,Bogotá,México,32195,Bajo
+169,Ciudad de México,Guatemala,17134,Alto
+170,Ciudad de Guatemala,México,42350,Alto
+171,Ciudad de Guatemala,México,18247,Alto
+172,Bogotá,México,76545,Medio
+173,Ciudad de Guatemala,México,79065,Bajo
+174,Ciudad de México,Guatemala,21252,Bajo
+175,Ciudad de Guatemala,México,26424,Medio
+176,Ciudad de México,México,52132,Alto
+177,Ciudad de México,Colombia,68551,Alto
+178,Ciudad de Guatemala,Guatemala,27753,Medio
+179,Ciudad de Guatemala,Guatemala,63240,Medio
+180,Bogotá,Guatemala,32162,Alto
+181,Ciudad de México,Guatemala,67370,Bajo
+182,Ciudad de Guatemala,Colombia,56293,Bajo
+183,Bogotá,Colombia,34357,Bajo
+184,Bogotá,México,29057,Alto
+185,Ciudad de México,México,90718,Alto
+186,Bogotá,México,56637,Alto
+187,Bogotá,Colombia,86903,Bajo
+188,Ciudad de México,Guatemala,39341,Medio
+189,Ciudad de Guatemala,Guatemala,98379,Bajo
+190,Ciudad de Guatemala,Guatemala,42330,Bajo
+191,Bogotá,Colombia,22398,Medio
+192,Ciudad de Guatemala,Colombia,71503,Alto
+193,Bogotá,Guatemala,38906,Bajo
+194,Ciudad de México,Colombia,19033,Bajo
+195,Ciudad de México,Colombia,35095,Bajo
+196,Ciudad de México,Guatemala,50843,Bajo
+197,Ciudad de Guatemala,Colombia,63294,Bajo
+198,Ciudad de Guatemala,Colombia,86989,Medio
+199,Bogotá,Guatemala,35866,Bajo
+200,Ciudad de Guatemala,México,53449,Alto
+201,Bogotá,Guatemala,37372,Bajo
+202,Ciudad de México,Guatemala,75897,Alto
+203,Ciudad de México,México,24697,Bajo
+204,Ciudad de México,Colombia,79799,Bajo
+205,Ciudad de Guatemala,México,56495,Alto
+206,Ciudad de Guatemala,Colombia,95819,Medio
+207,Bogotá,México,87613,Alto
+208,Bogotá,Guatemala,81934,Bajo
+209,Ciudad de Guatemala,Colombia,48818,Bajo
+210,Ciudad de Guatemala,Colombia,27950,Alto
+211,Ciudad de Guatemala,Guatemala,34301,Alto
+212,Bogotá,México,15642,Bajo
+213,Ciudad de Guatemala,Colombia,76003,Medio
+214,Ciudad de Guatemala,Guatemala,85804,Alto
+215,Ciudad de México,Guatemala,33325,Medio
+216,Ciudad de Guatemala,Guatemala,68459,Bajo
+217,Ciudad de México,México,32090,Bajo
+218,Bogotá,México,21360,Medio
+219,Bogotá,México,94434,Medio
+220,Ciudad de México,Colombia,77938,Bajo
+221,Ciudad de Guatemala,México,70917,Alto
+222,Ciudad de México,Colombia,29076,Bajo
+223,Ciudad de México,México,31054,Alto
+224,Ciudad de México,Guatemala,36706,Alto
+225,Ciudad de México,Colombia,32597,Bajo
+226,Bogotá,Guatemala,24712,Medio
+227,Ciudad de Guatemala,Colombia,96939,Bajo
+228,Bogotá,Colombia,72503,Medio
+229,Ciudad de Guatemala,Colombia,72342,Medio
+230,Ciudad de México,México,84655,Medio
+231,Ciudad de Guatemala,México,51537,Alto
+232,Bogotá,México,48028,Alto
+233,Ciudad de México,Guatemala,55557,Bajo
+234,Bogotá,México,29549,Alto
+235,Ciudad de México,Guatemala,58212,Medio
+236,Bogotá,México,34234,Bajo
+237,Ciudad de Guatemala,Colombia,88718,Alto
+238,Bogotá,México,51382,Alto
+239,Bogotá,Colombia,33142,Medio
+240,Bogotá,Colombia,94987,Medio
+241,Ciudad de México,Colombia,88377,Medio
+242,Ciudad de Guatemala,México,42420,Bajo
+243,Bogotá,México,79518,Medio
+244,Ciudad de México,Colombia,55964,Bajo
+245,Ciudad de México,Colombia,36803,Bajo
+246,Ciudad de Guatemala,México,90086,Medio
+247,Bogotá,México,96907,Medio
+248,Ciudad de México,Guatemala,42744,Medio
+249,Ciudad de México,Guatemala,60049,Medio
+250,Ciudad de Guatemala,Colombia,29639,Medio
+251,Bogotá,México,30821,Bajo
+252,Ciudad de México,México,35543,Alto
+253,Ciudad de México,México,12001,Medio
+254,Bogotá,Guatemala,24946,Medio
+255,Bogotá,Colombia,54573,Alto
+256,Ciudad de México,Guatemala,71066,Medio
+257,Ciudad de Guatemala,México,36686,Alto
+258,Bogotá,Guatemala,30342,Alto
+259,Ciudad de Guatemala,Guatemala,41593,Alto
+260,Ciudad de Guatemala,Colombia,47473,Bajo
+261,Bogotá,México,48951,Medio
+262,Ciudad de Guatemala,Guatemala,90496,Alto
+263,Ciudad de México,Colombia,25559,Bajo
+264,Ciudad de Guatemala,Colombia,91369,Medio
+265,Bogotá,México,17258,Bajo
+266,Bogotá,Colombia,35266,Alto
+267,Ciudad de Guatemala,Colombia,20578,Alto
+268,Ciudad de México,México,61053,Bajo
+269,Ciudad de México,Colombia,14845,Bajo
+270,Ciudad de Guatemala,México,32121,Alto
+271,Ciudad de México,Colombia,27134,Medio
+272,Bogotá,México,38979,Medio
+273,Bogotá,México,18076,Alto
+274,Bogotá,México,50938,Medio
+275,Ciudad de México,Colombia,81739,Bajo
+276,Ciudad de México,México,19199,Bajo
+277,Ciudad de México,Colombia,62299,Alto
+278,Ciudad de México,Guatemala,60699,Alto
+279,Bogotá,Guatemala,46649,Bajo
+280,Ciudad de México,Colombia,12427,Medio
+281,Ciudad de México,México,79327,Bajo
+282,Ciudad de México,Colombia,51643,Bajo
+283,Bogotá,Guatemala,19141,Alto
+284,Bogotá,México,26743,Medio
+285,Bogotá,Guatemala,96465,Alto
+286,Bogotá,Colombia,72545,Alto
+287,Ciudad de México,México,81370,Medio
+288,Bogotá,México,93735,Alto
+289,Ciudad de México,México,54104,Bajo
+290,Ciudad de México,Colombia,93295,Bajo
+291,Ciudad de México,México,67704,Alto
+292,Ciudad de Guatemala,México,79671,Medio
+293,Ciudad de Guatemala,Colombia,24532,Medio
+294,Ciudad de Guatemala,Colombia,14900,Bajo
+295,Ciudad de México,Colombia,62191,Medio
+296,Bogotá,Guatemala,91027,Bajo
+297,Bogotá,Colombia,85217,Bajo
+298,Bogotá,México,69380,Bajo
+299,Bogotá,Colombia,99035,Medio
+300,Bogotá,Guatemala,11391,Medio
