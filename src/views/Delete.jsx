@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import BannerDelete from '../assets/bannerDelete.png';
+
 import axios from 'axios';
 
 const Delete = () => {
@@ -35,7 +37,9 @@ const Delete = () => {
 
   return (
     <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-2xl font-semibold text-center mb-6">Eliminar Cliente</h2>
+      <div className="text-center mb-6">
+        <img src={BannerUpdate} alt="Banner Leer Cliente" className="banner-create" />
+      </div>
       {error && <div className="bg-red-500 text-white p-2 rounded mb-4">{error}</div>}
       {success && <div className="bg-green-500 text-white p-2 rounded mb-4">Cliente eliminado exitosamente</div>}
       <form onSubmit={handleSubmit}>

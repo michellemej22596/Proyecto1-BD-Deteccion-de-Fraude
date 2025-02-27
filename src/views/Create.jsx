@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import BannerCreate from '../assets/BannerCreate.png';
+import '../App.css';
 
 const Create = () => {
   const [clientData, setClientData] = useState({
@@ -38,7 +40,9 @@ const Create = () => {
 
   return (
     <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-2xl font-semibold text-center mb-6">Crear Cliente</h2>
+      <div className="text-center mb-6">
+      <img src={BannerCreate} alt="Banner Crear Cliente" className="banner-create" />
+      </div>
       {error && <div className="bg-red-500 text-white p-2 rounded mb-4">{error}</div>}
       {success && <div className="bg-green-500 text-white p-2 rounded mb-4">Cliente creado exitosamente</div>}
       <form onSubmit={handleSubmit}>

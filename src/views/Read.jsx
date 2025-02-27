@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import BannerRead from '../assets/BannerRead.png';
 
 const Read = () => {
   const [clientIdentifier, setClientIdentifier] = useState('');
@@ -34,7 +35,10 @@ const Read = () => {
 
   return (
     <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-2xl font-semibold text-center mb-6">Leer Cliente</h2>
+      <div className="text-center mb-6">
+        <img src={BannerRead} alt="Banner Leer Cliente" className="banner-create" />
+      </div>
+  
       {error && <div className="bg-red-500 text-white p-2 rounded mb-4">{error}</div>}
 
       <form onSubmit={handleSubmit}>

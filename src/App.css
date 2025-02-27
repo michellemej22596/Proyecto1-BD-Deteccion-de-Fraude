@@ -28,11 +28,11 @@ header {
 }
 
 .sidenav {
-  width: 240px;
+  width: 300px;
   background: #ffead9; /* fondo del navar */
   position: absolute;
   height: 180vh;
-  padding: 0 30px;
+  padding: 0 100px;
   left: -100%;
   transition: all 1s;
 }
@@ -53,54 +53,58 @@ ul {
 
 ul li {
   list-style: none;
-  margin: 10px 0;;
+  margin: 10px 0;
 }
 
 ul li a {
   text-decoration: none;
-  color: #b26150; /* color de la letra del navbar */
-  font-size: 20px;
-  display: block;
-  padding: 10px 15px;
-  border-radius: 6px  
-}
-
-ul li a:hover,
-ul li a.active {
-  background: #dbc1b0; /* fondo cuando el cursor esta encima */
+  color: #b26150; 
+  font-size: 30px;
+  display: flex; 
+  align-items: center;
+  padding: 15px 15px;
+  border-radius: 10px;
 }
 
 ul li a svg {
   margin-right: 10px;
+  width: 30px; 
+  height: 30px;
+  flex-shrink: 0;
+}
+
+ul li a:hover {
+  transform: scaleX(1.2);
 }
 
 header svg {
 font-size: 40px;
 }
 
-.main { /* Detalles del Home */
+.main { 
   height: 90vh;
   display: flex;
-  justify-content: center;
+
+  align-items: center; /* Centra el contenido verticalmente */
   font-size: 40px;
   color: #c9c9c9;
+  text-align: center;
 }
 
 .loader-container {
   position: fixed; /* Fija el loader en la pantalla */
   top: 0;
   left: 0;
-  width: 100vw; /* Ancho completo */
-  height: 100vh; /* Alto completo */
+  width: 100vw; 
+  height: 100vh; 
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #603e3d; /* Color de fondo (bg-stone-950 en Tailwind) */
-  z-index: 9999; /* Asegura que esté sobre todo el contenido */
+  z-index: 9999; 
 }
 
 
-/* Banner.css */
 .banner {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   padding: 40px;
@@ -120,3 +124,20 @@ font-size: 40px;
   font-weight: bold;
   margin: 0;
 }
+
+.banner-create {
+  width: 1500%; 
+  max-width: 1263px;  
+  height: auto;  
+  margin: 0 auto; 
+  display: block; 
+}
+
+
+.full-width-image {
+  width: 100%;  /* Ocupa todo el ancho de la pantalla */
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
+}
+
+
