@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.10",
+    "axios": "^1.8.1",
     "bootstrap": "^5.3.3",
     "lucide-react": "^0.476.0",
     "react": "^18.3.1",
