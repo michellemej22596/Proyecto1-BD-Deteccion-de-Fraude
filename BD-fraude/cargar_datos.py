@@ -64,14 +64,21 @@ def insertar_ubicaciones():
 
 def insertar_tarjetas():
     query = """
-    CREATE (:Tarjeta {Tarjeta_ID: $Tarjeta_ID, Tipo: $Tipo, Banco_Emisor: $Banco_Emisor, Límite_Crédito: $Límite_Crédito, EstaActivo: $EstaActivo})
+    CREATE (:Tarjeta {Tarjeta_ID: $Tarjeta_ID, Tipo: $Tipo, Banco_Emisor: $Banco_Emisor, 
+                      Límite_Crédito: $Límite_Crédito, EstaActivo: $EstaActivo})
     """
+    tarjetas.columns = tarjetas.columns.str.strip()  # Eliminar espacios en blanco en nombres de columnas
+    tarjetas.rename(columns={"Estado": "EstaActivo"}, inplace=True)  # Renombrar Estado -> EstaActivo
+    
     with conexion.driver.session() as session:
         for _, row in tarjetas.iterrows():
-            session.run(query, Tarjeta_ID=int(row["Tarjeta_ID"]), Tipo=row["Tipo"],
-                        Banco_Emisor=row["Banco_Emisor"], Límite_Crédito=float(row["Límite_Crédito"]),
-                        EstaActivo=bool(row["EstaActivo"]))
-    print("✅ Tarjetas insertadas.")
+            session.run(query, 
+                        Tarjeta_ID=int(row["Tarjeta_ID"]), 
+                        Tipo=row["Tipo"], 
+                        Banco_Emisor=row["Banco_Emisor"], 
+                        Límite_Crédito=float(row["Límite_Crédito"]), 
+                        EstaActivo=row["EstaActivo"]) 
+    print("✅ Tarjetas insertadas correctamente con 'EstaActivo'.")
 
 # Ejecutar las inserciones
 if __name__ == "__main__":
@@ -79,6 +86,6 @@ if __name__ == "__main__":
     insertar_cuentas()
     insertar_transacciones()
     insertar_comercios()
-    insertar_cuentas()
     insertar_ubicaciones()
+    insertar_tarjetas()
     conexion.close_connection()
