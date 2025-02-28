@@ -1,4 +1,4 @@
-Cliente_ID_1,Cliente_ID_2,Fecha_Registro,Tipo_Recomendación,Nivel_Confianza
+Cliente_Origen_ID,Cliente_Destino_ID,Fecha_Registro,Tipo_Recomendacion,Nivel_Confianza
 2884,2406,2020-05-19,Amigo,Alto
 2211,2943,2022-07-26,Familiar,Medio
 2455,692,2020-06-19,Amigo,Alto
