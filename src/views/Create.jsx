@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import BannerCreate from '../assets/BannerCreate.png';
 import '../App.css';
+import api from '../api';
+
 
 const Create = () => {
   // Estado para almacenar los datos del cliente
@@ -31,12 +33,12 @@ const Create = () => {
   // Función para manejar el envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     // Establecer el estado de carga y limpiar los errores y el éxito
     setLoading(true);
     setError(null);
     setSuccess(false);
-
+  
     // Validar que todos los campos estén completos
     const errorMessage = validateForm();
     if (errorMessage) {
@@ -44,12 +46,12 @@ const Create = () => {
       setLoading(false);
       return;
     }
-
+  
     try {
-      // Realizar la solicitud POST para crear el cliente
-      const response = await axios.post('https://proyecto1-bd-deteccion-de-fraude.onrender.com/api-fraude/clientes', clientData);
-
-      if (response.status === 201) {
+      // Realizar la solicitud POST utilizando la configuración de api.js
+      const response = await api.post('/clientes', clientData);
+  
+      if (response.status === 200 || response.status === 201) {
         setSuccess(true);
         // Limpiar el formulario después de la creación
         setClientData({ cliente_id: '', nombre: '', edad: '', pais: '', estado: '' });
@@ -68,6 +70,7 @@ const Create = () => {
       setLoading(false);
     }
   };
+  
 
   return (
     <div className="custom-container max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
