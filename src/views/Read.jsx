@@ -36,23 +36,23 @@ const Read = () => {
   return (
     <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
       <div className="text-center mb-6">
-        <img src={BannerRead} alt="Banner Leer Cliente" className="banner-create" />
+        <img src={BannerRead} alt="Banner Leer Cliente" className="bannersCRUD" />
       </div>
   
       {error && <div className="bg-red-500 text-white p-2 rounded mb-4">{error}</div>}
 
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700" htmlFor="clientIdentifier">
-            ID o Correo Electrónico del Cliente
-          </label>
+        <p className="custom-input-label text-lg font-semibold text-gray-700 mb-1">
+            ID o Correo Electrónico del Cliente</p>
           <input
             id="clientIdentifier"
             type="text"
             value={clientIdentifier}
             onChange={(e) => setClientIdentifier(e.target.value)}
             placeholder="ID o correo del cliente"
-            className="w-full p-2 border border-gray-300 rounded-lg mt-2"
+            className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            style={{ borderRadius: '7px' }}
             required
           />
         </div>

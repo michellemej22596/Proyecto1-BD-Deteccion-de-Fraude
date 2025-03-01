@@ -38,15 +38,15 @@ const Delete = () => {
   return (
     <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
       <div className="text-center mb-6">
-        <img src={BannerUpdate} alt="Banner Leer Cliente" className="banner-create" />
+        <img src={BannerDelete} alt="Banner Borrar Cliente" className="bannersCRUD" />
       </div>
       {error && <div className="bg-red-500 text-white p-2 rounded mb-4">{error}</div>}
       {success && <div className="bg-green-500 text-white p-2 rounded mb-4">Cliente eliminado exitosamente</div>}
+      
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700" htmlFor="clientIdentifier">
-            ID o Correo Electrónico del Cliente
-          </label>
+        <p className="custom-input-label text-lg font-semibold text-gray-700 mb-1">
+            ID o Correo Electrónico del Cliente</p>
           <input
             id="clientIdentifier"
             type="text"

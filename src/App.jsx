@@ -56,6 +56,10 @@ function App() {
         <Route path="/delete" element={<Delete />} />  
       </Routes>
     </div>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
     <Footer />
 
   </Router>      

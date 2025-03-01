@@ -125,19 +125,43 @@ font-size: 40px;
   margin: 0;
 }
 
-.banner-create {
-  width: 1500%; 
-  max-width: 1263px;  
-  height: auto;  
-  margin: 0 auto; 
-  display: block; 
+.banner-container {
+  padding-top: 50px;
+  padding-bottom: 20px; 
+  position: relative;
+}
+
+.bannersCRUD {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.custom-container {
+  margin-top: 150px;
+}
+
+/* Aplica la fuente 'Roboto' a los títulos */
+.custom-input-label {
+  font-family: Fantasy; ;
 }
 
 
-.full-width-image {
-  width: 100%;  /* Ocupa todo el ancho de la pantalla */
-  height: auto; /* Mantiene la proporción de la imagen */
-  object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
+
+input {
+  all: unset;
+  width: 80%; 
+  background-color: #ffead9;
+  padding: 12px; 
+  border: 2px solid #d1c9c6; 
+  border-radius: 8px; 
+  font-size: 1.2rem;
+  color: #603e3d;
 }
 
-
+input:focus {
+  outline: none;
+  border-color: #8a5541; 
+  box-shadow: 0 0 60px #d09077; 
+}
