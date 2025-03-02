@@ -151,7 +151,7 @@ font-size: 40px;
 
 input {
   all: unset;
-  width: 80%; 
+  width: 40%; 
   background-color: #ffead9;
   padding: 12px; 
   border: 2px solid #d1c9c6; 
@@ -159,6 +159,9 @@ input {
   font-size: 1.2rem;
   color: #603e3d;
 }
+
+#nombre, #edad, #pais {
+  width: 30%; }
 
 input:focus {
   outline: none;

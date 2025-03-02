@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import BannerCreate from '../assets/BannerCreate.png';
 import '../App.css';
 import api from '../api';
 
-
 const Create = () => {
-  // Estado para almacenar los datos del cliente
   const [clientData, setClientData] = useState({
     cliente_id: '',
     nombre: '',
@@ -15,12 +12,10 @@ const Create = () => {
     estado: '',
   });
 
-  // Estados para controlar la carga, el error y el éxito
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
 
-  // Función para manejar la validación del formulario
   const validateForm = () => {
     for (let key in clientData) {
       if (!clientData[key]) {
@@ -30,35 +25,28 @@ const Create = () => {
     return null;
   };
 
-  // Función para manejar el envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    // Establecer el estado de carga y limpiar los errores y el éxito
     setLoading(true);
     setError(null);
     setSuccess(false);
-  
-    // Validar que todos los campos estén completos
+
     const errorMessage = validateForm();
     if (errorMessage) {
       setError(errorMessage);
       setLoading(false);
       return;
     }
-  
+
     try {
-      // Realizar la solicitud POST utilizando la configuración de api.js
-      const response = await api.post('/clientes', clientData);
-  
+      const response = await api.post('/clientes/', clientData);
+
       if (response.status === 200 || response.status === 201) {
         setSuccess(true);
-        // Limpiar el formulario después de la creación
         setClientData({ cliente_id: '', nombre: '', edad: '', pais: '', estado: '' });
       }
     } catch (error) {
       console.error('Error details:', error);
-      // Manejo de errores con un mensaje adecuado
       if (error.response) {
         setError(`Error: ${error.response.data.message || 'Error desconocido'}`);
       } else if (error.request) {
@@ -70,7 +58,6 @@ const Create = () => {
       setLoading(false);
     }
   };
-  
 
   return (
     <div className="custom-container max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
@@ -78,11 +65,9 @@ const Create = () => {
         <img src={BannerCreate} alt="Banner Crear Cliente" className="bannersCRUD" />
       </div>
 
-      {/* Mostrar errores o éxito */}
       {error && <div className="bg-red-500 text-white p-2 rounded mb-4">{error}</div>}
       {success && <div className="bg-green-500 text-white p-2 rounded mb-4">Cliente creado exitosamente</div>}
 
-      {/* Formulario de creación de cliente */}
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <p className="custom-input-label text-lg font-semibold text-gray-700 mb-1">ID del Cliente</p>

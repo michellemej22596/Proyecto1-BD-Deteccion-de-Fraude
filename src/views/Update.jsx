@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import BannerUpdate from '../assets/BannerUpdate.png';
-import axios from 'axios';
+import api from '../api';
 
 const Update = () => {
   const [clientIdentifier, setClientIdentifier] = useState('');
   const [clientData, setClientData] = useState(null);
   const [updatedData, setUpdatedData] = useState({
     nombre: '',
-    email: '',
+    edad: '',
+    pais: '',
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -19,16 +20,17 @@ const Update = () => {
     setSuccess(false);
 
     try {
-      const response = await axios.get(`http://localhost:8000/clientes/${clientIdentifier}`);
+      const response = await api.get(`/clientes/${clientIdentifier}`);
       if (response.status === 200) {
-        setClientData(response.data); // Set the fetched client data
+        setClientData(response.data);
         setUpdatedData({
           nombre: response.data.nombre,
-          email: response.data.email,
+          edad: response.data.edad,
+          pais: response.data.pais,
         });
       }
     } catch (error) {
-      setError('No se encontró el cliente con ese ID o correo.');
+      setError('No se encontró el cliente con ese ID.');
     } finally {
       setLoading(false);
     }
@@ -41,10 +43,7 @@ const Update = () => {
     setError(null);
 
     try {
-      const response = await axios.put(
-        `http://localhost:8000/clientes/${clientIdentifier}`,
-        updatedData
-      );
+      const response = await api.put(`/clientes/${clientIdentifier}`, updatedData);
       if (response.status === 200) {
         setSuccess(true);
       }
@@ -65,18 +64,20 @@ const Update = () => {
 
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-        <p className="custom-input-label text-lg font-semibold text-gray-700 mb-1">
-        ID o Correo Electrónico del Cliente</p>
+          <p className="custom-input-label text-lg font-semibold text-gray-700 mb-1">
+            ID del Cliente
+          </p>
           <input
             id="clientIdentifier"
             type="text"
             value={clientIdentifier}
             onChange={(e) => setClientIdentifier(e.target.value)}
-            placeholder="ID o correo del cliente"
-            className="w-full p-2 border border-gray-300 rounded-lg mt-2"
+            placeholder="ID del cliente"
+            className="w-full my-3 rounded-lg bg-stone-900 p-4 border-2 border-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-400 text-xl text-bg-stone-900"
             required
           />
         </div>
+
 
         <div className="mb-4">
           <button
@@ -85,7 +86,7 @@ const Update = () => {
             disabled={loading}
             className={`w-full p-2 rounded-lg text-white ${
               loading ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'
-            }`}
+            }`}           
           >
             {loading ? 'Cargando...' : 'Buscar Cliente'}
           </button>
@@ -94,9 +95,8 @@ const Update = () => {
         {clientData && (
           <div className="mt-4">
             <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700" htmlFor="nombre">
-                Nombre
-              </label>
+              <p className="custom-input-label text-lg font-semibold text-gray-700 mb-1">Nombre</p>
+              <label className="block text-sm font-medium text-gray-700" htmlFor="nombre"></label>
               <input
                 id="nombre"
                 type="text"
@@ -109,16 +109,29 @@ const Update = () => {
             </div>
 
             <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700" htmlFor="email">
-                Correo Electrónico
-              </label>
+              <p className="custom-input-label text-lg font-semibold text-gray-700 mb-1">Edad</p>
+              <label className="block text-sm font-medium text-gray-700" htmlFor="edad"></label>
               <input
-                id="email"
-                type="email"
-                value={updatedData.email}
-                onChange={(e) => setUpdatedData({ ...updatedData, email: e.target.value })}
+                id="edad"
+                type="number"
+                value={updatedData.edad}
+                onChange={(e) => setUpdatedData({ ...updatedData, edad: e.target.value })}
                 className="w-full p-2 border border-gray-300 rounded-lg mt-2"
-                placeholder="Correo electrónico del cliente"
+                placeholder="Edad del cliente"
+                required
+              />
+            </div>
+
+            <div className="mb-4">
+              <p className="custom-input-label text-lg font-semibold text-gray-700 mb-1">País</p>
+              <label className="block text-sm font-medium text-gray-700" htmlFor="pais"></label>
+              <input
+                id="pais"
+                type="text"
+                value={updatedData.pais}
+                onChange={(e) => setUpdatedData({ ...updatedData, pais: e.target.value })}
+                className="w-full p-2 border border-gray-300 rounded-lg mt-2"
+                placeholder="País del cliente"
                 required
               />
             </div>
@@ -128,8 +141,9 @@ const Update = () => {
                 type="submit"
                 disabled={loading}
                 className={`w-full p-2 rounded-lg text-white ${
-                  loading ? 'bg-gray-400' : 'bg-green-600 hover:bg-green-700'
+                  loading ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'
                 }`}
+                
               >
                 {loading ? 'Cargando...' : 'Actualizar Cliente'}
               </button>
