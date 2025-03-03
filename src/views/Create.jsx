@@ -68,7 +68,7 @@ const Create = () => {
       {error && <div className="bg-red-500 text-white p-2 rounded mb-4">{error}</div>}
       {success && <div className="bg-green-500 text-white p-2 rounded mb-4">Cliente creado exitosamente</div>}
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="mb-6">
         <div className="mb-4">
           <p className="custom-input-label text-lg font-semibold text-gray-700 mb-1">ID del Cliente</p>
           <input
@@ -76,7 +76,8 @@ const Create = () => {
             value={clientData.cliente_id}
             onChange={(e) => setClientData({ ...clientData, cliente_id: e.target.value })}
             placeholder="Escriba el ID del cliente"
-            className="w-full my-3 rounded-lg bg-stone-900 p-4 border-2 border-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-400 text-xl text-white"
+            className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
           />
         </div>
 

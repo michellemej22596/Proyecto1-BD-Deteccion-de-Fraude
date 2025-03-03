@@ -13,7 +13,9 @@ header {
   justify-content: start; /* Asegura que los elementos estén alineados a la izquierda */
   padding: 15px 30px;
   background: #ffead9;
-  height: 60px; /
+  height: 60px;
+  position: relative; /* Cambiado de 'absolute' a 'relative' para evitar superposiciones */
+  z-index: 2; /* Asegura que el menú se muestre encima del contenido */
 }
 
 .menu-icon {
@@ -29,12 +31,14 @@ header {
 
 .sidenav {
   width: 300px;
-  background: #ffead9; /* fondo del navar */
+  background: #ffead9; /* fondo del navbar */
   position: absolute;
   height: 180vh;
   padding: 0 100px;
   left: -100%;
   transition: all 1s;
+  top: 90px; /* Inicia debajo del header */
+  z-index: 1;
 }
 
 .sidenav.active {
@@ -81,14 +85,14 @@ header svg {
 font-size: 40px;
 }
 
-.main { 
+.main {
   height: 90vh;
   display: flex;
-
   align-items: center; /* Centra el contenido verticalmente */
   font-size: 40px;
   color: #c9c9c9;
   text-align: center;
+  margin-top: 50px; /* Asegura espacio debajo del banner */
 }
 
 .loader-container {
@@ -126,12 +130,13 @@ font-size: 40px;
 }
 
 .banner-container {
-  padding-top: 50px;
+  padding-top: 150px;
   padding-bottom: 20px; 
   position: relative;
 }
 
 .bannersCRUD {
+  margin-top: 5px;
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -167,4 +172,86 @@ input:focus {
   outline: none;
   border-color: #8a5541; 
   box-shadow: 0 0 60px #d09077; 
+}
+
+
+/* Estilos para la tabla de clientes */
+.client-table {
+  width: 60%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #ffead9; /* Fondo acorde al diseño */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  width: 100%;
+  color: rgb(33, 33, 33);
+  
+}
+
+
+.client-table th,
+.client-table td {
+  padding: 2px;
+  text-align: center;
+  border-bottom: 2px solid #d1c9c6;
+}
+
+.client-table th {
+  background-color: #b26150; /* Color principal */
+  color: rgb(33, 33, 33);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.client-table tr:nth-child(even) {
+  background-color: #f7d7c4;
+}
+
+.client-table tr:hover {
+  background-color: #e8b9a7; /* Color de fondo al pasar el mouse */
+  transition: background-color 0.3s ease;
+}
+
+/* Botón estilizado */
+.read-button {
+  background-color: #b26150;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 5px;
+  width: 20%;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.read-button:hover {
+  background-color: #e8b9a7;
+}
+
+/* Loader */
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #b26150;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

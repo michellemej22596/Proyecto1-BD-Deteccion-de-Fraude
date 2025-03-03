@@ -1,3 +1,4 @@
+// App.jsx
 import { useState, useEffect } from 'react';
 import { IoMenu } from 'react-icons/io5';
 import ScrollButton from '@components/ScrollButton'; 
@@ -56,8 +57,7 @@ function App() {
         <Route path="/delete" element={<Delete />} />  
       </Routes>
     </div>
-
-
+    <Footer />
   </Router>      
 }
     </>

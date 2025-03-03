@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import BannerDelete from '../assets/bannerDelete.png';
-
-import axios from 'axios';
+import '../App.css';
+import api from '../api';
 
 const Delete = () => {
   const [clientIdentifier, setClientIdentifier] = useState('');
@@ -17,13 +17,13 @@ const Delete = () => {
 
     // Validar que el campo no esté vacío
     if (!clientIdentifier) {
-      setError('Por favor, ingresa un ID o correo del cliente.');
+      setError('Por favor, ingresa un ID del cliente.');
       setLoading(false);
       return;
     }
 
     try {
-      const response = await axios.delete(`http://localhost:8000/clientes/${clientIdentifier}`);
+      const response = await api.delete(`/clientes/${clientIdentifier}`);
       if (response.status === 200) {
         setSuccess(true);
         setClientIdentifier(''); // Limpiar el campo
@@ -46,27 +46,28 @@ const Delete = () => {
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
         <p className="custom-input-label text-lg font-semibold text-gray-700 mb-1">
-            ID o Correo Electrónico del Cliente</p>
+            ID del Cliente</p>
           <input
             id="clientIdentifier"
             type="text"
             value={clientIdentifier}
             onChange={(e) => setClientIdentifier(e.target.value)}
-            placeholder="ID o correo del cliente"
+            placeholder="ID del cliente"
             className="w-full p-2 border border-gray-300 rounded-lg mt-2"
             required
           />
         </div>
         <div className="mb-4">
-          <button
-            type="submit"
-            disabled={loading}
-            className={`w-full p-2 rounded-lg text-white ${
-              loading ? 'bg-gray-400' : 'bg-red-600 hover:bg-red-700'
-            }`}
-          >
-            {loading ? 'Eliminando...' : 'Eliminar Cliente'}
-          </button>
+        <button type="submit" disabled={loading} className="read-button">
+          {loading ? (
+            <>
+            <div className="loader"></div>
+            </>
+            ) : (
+              'Eliminar Cliente'
+              )}
+</button>
+
         </div>
       </form>
     </div>
