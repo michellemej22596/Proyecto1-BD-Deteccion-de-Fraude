@@ -32,6 +32,9 @@ def buscar_clientes_service(nombre: Optional[str] = None, id: Optional[int] = No
     result = db.query(query, params)
     return result
 
+def obtener_todos_los_clientes_service():
+    query = "MATCH (c:Cliente) RETURN c;"
+    return db.query(query)
 
 # Crear un nuevo cliente
 def crear_cliente_service(cliente_id: int, nombre: str, edad: int, pais: str, estado: str):
