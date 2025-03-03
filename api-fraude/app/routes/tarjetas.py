@@ -4,7 +4,7 @@ from app.services.tarjeta_service import (
     obtener_tarjeta_service,
     buscar_tarjetas_service,
     crear_tarjeta_service,
-    cambiar_estado_tarjeta_service
+    eliminar_tarjeta_service
 )
 
 router = APIRouter()
@@ -35,6 +35,7 @@ def crear_tarjeta(data: TarjetaCreate):
         data.limite_credito, data.estado, data.cliente_id
     )
 
-@router.patch("/{tarjeta_id}/estado")
-def cambiar_estado_tarjeta(tarjeta_id: int, data: EstadoUpdate):
-    return cambiar_estado_tarjeta_service(tarjeta_id, data.estado)
+
+@router.delete("/{tarjeta_id}")
+def eliminar_tarjeta(tarjeta_id: int):
+    return eliminar_tarjeta_service(tarjeta_id)

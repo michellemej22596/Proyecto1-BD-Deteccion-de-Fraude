@@ -37,12 +37,7 @@ def crear_tarjeta_service(tarjeta_id: int, tipo: str, banco_emisor: str, limite_
     return result[0]
 
 
-# Activar/Desactivar una tarjeta
-def cambiar_estado_tarjeta_service(tarjeta_id: int, estado: str):
-    query = """
-    MATCH (t:Tarjeta {Tarjeta_ID: $tarjeta_id})
-    SET t.Estado = $estado
-    RETURN t;
-    """
-    result = db.query(query, {"tarjeta_id": tarjeta_id, "estado": estado})
-    return result[0] if result else {"error": "Tarjeta no encontrada"}
+def eliminar_tarjeta_service(tarjeta_id: int):
+    query = "MATCH (t:Tarjeta {Tarjeta_ID: $tarjeta_id}) DETACH DELETE t;"
+    return db.query(query, {"tarjeta_id": tarjeta_id})
+
