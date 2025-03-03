@@ -1,7 +1,7 @@
 // App.jsx
 import { useState, useEffect } from 'react';
 import { IoMenu } from 'react-icons/io5';
-import ScrollButton from '@components/ScrollButton'; 
+import SearchBar from '@components/SearchBar'; 
 import NavBar from '@components/Navbar'; 
 import Banner from '@components/Banner'; 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Cambiado Switch por Routes
@@ -12,6 +12,7 @@ import Create from '@views/Create';
 import Read from '@views/Read';
 import Update from '@views/Update';
 import Delete from '@views/Delete';
+import BankAccount from '@views/BankAccount';
 import './App.css';
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
   <Router>
     <header className="header">
       <IoMenu className="menu-icon" onClick={() => setShowNav(!showNav)} />
+      <SearchBar />
     </header>
 
     <NavBar show={showNav} />
@@ -55,6 +57,8 @@ function App() {
         <Route path="/read" element={<Read />} />  
         <Route path="/update" element={<Update />} />  
         <Route path="/delete" element={<Delete />} />  
+        <Route path="/bankaccount/:clientId" element={<BankAccount />} /> 
+        
       </Routes>
     </div>
     <Footer />

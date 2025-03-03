@@ -255,3 +255,126 @@ input:focus {
     transform: rotate(360deg);
   }
 }
+
+
+/* Estilos para la barra de búsqueda. */
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin: 20px 0;
+  position: absolute; /* Posiciona la barra de búsqueda en la parte derecha */
+  top: 15px; /* Ajusta para que esté alineado con el header */
+  right: 30px; /* Alinea la barra de búsqueda al borde derecho */
+}
+
+.search-bar input {
+  width: 250px; /* Puedes ajustar el tamaño según tus necesidades */
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #793f2a;
+  border-radius: 8px;
+  background-color: #ffead9; 
+  color: #603e3d; 
+  margin-right: 10px; /* Espaciado entre el input y el botón */
+}
+
+.search-bar button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #b26150; /* Color del botón */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  box-shadow: 0 0 10px #ed7226;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #8a5541;
+  box-shadow: 0 0 30px rgba(138, 85, 65, 0.6);
+}
+
+
+
+/* Contenedor principal de la cuenta bancaria */
+.bank-account {
+  font-family: 'Roboto', sans-serif;
+  color: #603e3d;
+  background-color: #f9f0e6;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  min-height: 100vh; 
+  text-align: center;
+  width: 100%; /* Asegura que ocupe toda la pantalla */
+}
+
+.bank-account > div {
+  background-color: #ffead9;
+  border-radius: 15px;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px auto; 
+  text-align: center;
+}
+
+
+/* Encabezado */
+.bank-account h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #b26150;
+  text-align: center;
+}
+
+/* Contenedor de cada cuenta */
+.bank-account > div {
+  background-color: #ffead9;
+  border-radius: 15px;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  text-align: center; 
+}
+
+/* Estilo del texto */
+.bank-account p {
+  font-size: 1rem;
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* Negrita para etiquetas */
+.bank-account p strong {
+  font-weight: bold;
+  color: #4a2423;
+}
+
+/* Línea de separación */
+.bank-account hr {
+  border: 0;
+  border-top: 1px solid #d1c9c6;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Cuando no hay resultados */
+.bank-account .no-results {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #603e3d;
+  text-align: center;
+}

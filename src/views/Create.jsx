@@ -5,7 +5,6 @@ import api from '../api';
 
 const Create = () => {
   const [clientData, setClientData] = useState({
-    cliente_id: '',
     nombre: '',
     edad: '',
     pais: '',
@@ -39,11 +38,12 @@ const Create = () => {
     }
 
     try {
+      // Enviamos solo los datos sin incluir el cliente_id
       const response = await api.post('/clientes/', clientData);
 
       if (response.status === 200 || response.status === 201) {
         setSuccess(true);
-        setClientData({ cliente_id: '', nombre: '', edad: '', pais: '', estado: '' });
+        setClientData({ nombre: '', edad: '', pais: '', estado: '' });
       }
     } catch (error) {
       console.error('Error details:', error);
@@ -69,18 +69,6 @@ const Create = () => {
       {success && <div className="bg-green-500 text-white p-2 rounded mb-4">Cliente creado exitosamente</div>}
 
       <form onSubmit={handleSubmit} className="mb-6">
-        <div className="mb-4">
-          <p className="custom-input-label text-lg font-semibold text-gray-700 mb-1">ID del Cliente</p>
-          <input
-            type="text"
-            value={clientData.cliente_id}
-            onChange={(e) => setClientData({ ...clientData, cliente_id: e.target.value })}
-            placeholder="Escriba el ID del cliente"
-            className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
-
         <div className="mb-4">
           <p className="custom-input-label text-lg font-semibold text-gray-700 mb-1">Nombre del Cliente</p>
           <input
