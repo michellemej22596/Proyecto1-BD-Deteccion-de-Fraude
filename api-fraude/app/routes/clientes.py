@@ -3,12 +3,17 @@ from typing import Optional
 from app.services.cliente_service import (
     obtener_cliente_service,
     buscar_clientes_service,
+    obtener_todos_los_clientes_service,
     crear_cliente_service,
     editar_cliente_service,
-    cambiar_estado_cliente_service
+    eliminar_cliente_service
 )
 
 router = APIRouter()
+
+@router.get("/")
+def obtener_todos_los_clientes():
+    return obtener_todos_los_clientes_service()
 
 @router.get("/search")
 def buscar_clientes(
@@ -40,6 +45,6 @@ def editar_cliente(
 ):
     return editar_cliente_service(cliente_id, nombre, edad, pais)
 
-@router.patch("/{cliente_id}/estado")
-def cambiar_estado_cliente(cliente_id: int, estado: str = Body(...)):
-    return cambiar_estado_cliente_service(cliente_id, estado)
+@router.delete("/{cliente_id}")
+def eliminar_cliente(cliente_id: int):
+    return eliminar_cliente_service(cliente_id)

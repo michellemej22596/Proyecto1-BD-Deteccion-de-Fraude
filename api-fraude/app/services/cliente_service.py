@@ -32,6 +32,9 @@ def buscar_clientes_service(nombre: Optional[str] = None, id: Optional[int] = No
     result = db.query(query, params)
     return result
 
+def obtener_todos_los_clientes_service():
+    query = "MATCH (c:Cliente) RETURN c;"
+    return db.query(query)
 
 # Crear un nuevo cliente
 def crear_cliente_service(cliente_id: int, nombre: str, edad: int, pais: str, estado: str):
@@ -65,12 +68,6 @@ def editar_cliente_service(cliente_id: int, nombre: str = None, edad: int = None
     result = db.query(query, params)
     return result[0]
 
-# Cambiar estado de un cliente (Activar/Desactivar)
-def cambiar_estado_cliente_service(cliente_id: int, estado: str):
-    query = """
-    MATCH (c:Cliente {Cliente_ID: $cliente_id})
-    SET c.Estado = $estado
-    RETURN c;
-    """
-    result = db.query(query, {"cliente_id": cliente_id, "estado": estado})
-    return result[0] if result else {"error": "Cliente no encontrado"}
+def eliminar_cliente_service(cliente_id: int):
+    query = "MATCH (c:Cliente {Cliente_ID: $cliente_id}) DETACH DELETE c;"
+    return db.query(query, {"cliente_id": cliente_id})
