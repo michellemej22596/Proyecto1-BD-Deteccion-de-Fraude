@@ -40,7 +40,9 @@ def obtener_todos_los_clientes_service():
 def crear_cliente_service(cliente_id: int, nombre: str, edad: int, pais: str, estado: str):
     query = """
     CREATE (c:Cliente {Cliente_ID: $cliente_id, Nombre: $nombre, Edad: $edad, País: $pais, Estado: $estado})
-    RETURN c;
+    WITH c
+    CALL apoc.create.addLabels(c, CASE WHEN $edad > 60 THEN ['ClienteSenior'] ELSE [] END) YIELD node
+    RETURN node;
     """
     result = db.query(query, {"cliente_id": cliente_id, "nombre": nombre, "edad": edad, "pais": pais, "estado": estado})
     return result[0]
