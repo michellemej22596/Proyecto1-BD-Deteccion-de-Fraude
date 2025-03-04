@@ -18,6 +18,10 @@ import ReadAccount from '@views/Read_Account';
 import UpdateAccount from '@views/Update_Account';
 import StatusAccount from '@views/Status_Account';
 import BalanceAccount from '@views/Balance_Account';
+import SearchCard from '@views/SearchCard';
+import CreateCard from '@views/CreateCard';
+import ReadCard from '@views/ReadCard';
+import DeleteCard from '@views/DeleteCard';
 
 import './App.css';
 
@@ -70,6 +74,12 @@ function App() {
         <Route path="/account/update" element={<UpdateAccount />} />
         <Route path="/account/status" element={<StatusAccount />} />
         <Route path="/account/balance" element={<BalanceAccount />} />
+
+
+        <Route path="/card/search" element={<SearchCard />} />
+        <Route path="/card/create" element={<CreateCard />} />
+        <Route path="/card/read" element={<ReadCard />} />
+        <Route path="/card/delete" element={<DeleteCard />} />
       </Routes>
     </div>
     <Footer />

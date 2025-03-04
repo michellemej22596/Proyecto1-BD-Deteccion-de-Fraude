@@ -420,3 +420,12 @@ input:focus {
   background-color: #e8b9a7;
   box-shadow: 0 0 60px #d09077; 
 }
+
+
+.input-field {
+  @apply w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition duration-200;
+}

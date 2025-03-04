@@ -66,7 +66,7 @@ const Delete = () => {
             ) : (
               'Eliminar Cliente'
               )}
-</button>
+        </button>
 
         </div>
       </form>
