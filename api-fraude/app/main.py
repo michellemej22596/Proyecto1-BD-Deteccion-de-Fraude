@@ -2,8 +2,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes import clientes, cuentas, tarjetas, transacciones, fraude, modelo
 
-app.include_router(modelo.router, prefix="/modelo", tags=["Modelos de Data Science"])
-
 from app.config import CORS_ORIGINS, CORS_ALLOW_CREDENTIALS, CORS_ALLOW_METHODS, CORS_ALLOW_HEADERS
 
 app = FastAPI(title="API de Detección de Fraude", version="1.0")
