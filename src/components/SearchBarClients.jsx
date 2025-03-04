@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import api from '../api'; 
 import "../App.css";
 
-const SearchBar = ({ onSearchResults }) => {
+const SearchBarClients = ({ onSearchResults }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate(); 
 
@@ -40,4 +40,4 @@ const SearchBar = ({ onSearchResults }) => {
   );
 };
 
-export default SearchBar;
+export default SearchBarClients;

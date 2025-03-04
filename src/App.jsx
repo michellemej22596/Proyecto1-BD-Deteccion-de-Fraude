@@ -1,7 +1,6 @@
-// App.jsx
 import { useState, useEffect } from 'react';
 import { IoMenu } from 'react-icons/io5';
-import SearchBar from '@components/SearchBar'; 
+import SearchBarClients from '@components/SearchBarClients'; 
 import NavBar from '@components/Navbar';
 import Banner from '@components/Banner'; 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Cambiado Switch por Routes
@@ -55,7 +54,7 @@ function App() {
   <Router>
     <header className="header">
       <IoMenu className="menu-icon" onClick={() => setShowNav(!showNav)} />
-      <SearchBar />
+      <SearchBarClients />
     </header>
 
     <NavBar show={showNav} />

@@ -9,6 +9,15 @@ const Read = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  // Función para formatear las fechas de apertura de las cuentas
+  const formatDate = (date) => {
+    const { _Date__day, _Date__month, _Date__year } = date;
+    if (_Date__day && _Date__month && _Date__year) {
+      return `${_Date__day}/${_Date__month}/${_Date__year}`;
+    }
+    return 'Fecha no disponible';
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -22,7 +31,7 @@ const Read = () => {
     }
 
     try {
-      const response = await api.get(`/clientes/${clientIdentifier}`);
+      const response = await api.get(`https://proyecto1-bd-deteccion-de-fraude.onrender.com/clientes/${clientIdentifier}`);
       if (response.status === 200) {
         setClientData(response.data);
       }
@@ -64,7 +73,6 @@ const Read = () => {
         <div className="mt-6 bg-black-100 p-4 rounded-lg shadow">
           <h3 className="text-xl font-semibold mb-4">Datos del Cliente</h3>
 
-          {/* Contenedor centrado para la tabla */}
           <div className="table-container">
             <table className="client-table">
               <tbody>
@@ -102,6 +110,7 @@ const Read = () => {
                       <th>Tipo</th>
                       <th>Saldo</th>
                       <th>Estado</th>
+                      <th>Fecha de Apertura</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -110,6 +119,7 @@ const Read = () => {
                         <td>{cuenta.Tipo}</td>
                         <td>${cuenta.Saldo.toFixed(2)}</td>
                         <td>{cuenta.Estado}</td>
+                        <td>{formatDate(cuenta.Fecha_Apertura)}</td> {/* Agregado campo de fecha */}
                       </tr>
                     ))}
                   </tbody>
