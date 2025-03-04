@@ -4,8 +4,8 @@ from typing import Optional
 # Obtener información de un cliente
 def obtener_cliente_service(cliente_id: int):
     query = """
-    MATCH (c:Cliente {Cliente_ID: $cliente_id})-[:POSEE]->(cu:CuentaBancaria)
-    RETURN c AS cliente, collect(cu) AS cuentas;
+    MATCH (c:Cliente {Cliente_ID: $cliente_id})
+    RETURN c AS cliente;
     """
     result = db.query(query, {"cliente_id": cliente_id})
     return result[0] if result else {"error": "Cliente no encontrado"}
