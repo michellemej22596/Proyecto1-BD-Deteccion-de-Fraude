@@ -27,7 +27,7 @@ def buscar_clientes_service(nombre: Optional[str] = None, id: Optional[int] = No
     if not conditions:
         return {"error": "Debe proporcionar al menos un criterio de búsqueda"}
 
-    query += " AND ".join(conditions) + " RETURN c LIMIT 10"
+    query += " AND ".join(conditions) + " RETURN c LIMIT 100"
 
     result = db.query(query, params)
     return result
