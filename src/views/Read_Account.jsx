@@ -20,7 +20,7 @@ const ReadAccount = () => {
       
       if (response.status === 200) {
         console.log('Datos de la cuenta recibidos:', response.data); 
-        setAccountData(response.data);
+        setAccountData(response.data.cu); // Accedemos a los datos correctamente
       } else {
         setError('No se pudo obtener la cuenta.');
       }
@@ -30,6 +30,12 @@ const ReadAccount = () => {
     } finally {
       setLoading(false); 
     }
+  };
+
+  // Función para formatear la fecha
+  const formatDate = (date) => {
+    const { _Date__year, _Date__month, _Date__day } = date;
+    return `${_Date__day}-${_Date__month}-${_Date__year}`;
   };
 
   return (
@@ -68,20 +74,24 @@ const ReadAccount = () => {
             <table className="client-table">
               <tbody>
                 <tr>
-                  <th>Tipo</th>
-                  <td>{accountData.Tipo || 'N/A'}</td>
+                  <th>Cuenta ID</th>
+                  <td>{accountData.Cuenta_ID || 'N/A'}</td>
                 </tr>
                 <tr>
-                  <th>Saldo</th>
-                  <td>${accountData.Saldo ? accountData.Saldo.toFixed(2) : 'N/A'}</td>
+                  <th>Tipo</th>
+                  <td>{accountData.Tipo || 'N/A'}</td>
                 </tr>
                 <tr>
                   <th>Estado</th>
                   <td>{accountData.Estado || 'N/A'}</td>
                 </tr>
                 <tr>
-                  <th>Cuenta ID</th>
-                  <td>{accountData.Cuenta_ID || 'N/A'}</td>
+                  <th>Fecha de Apertura</th>
+                  <td>{accountData.Fecha_Apertura ? formatDate(accountData.Fecha_Apertura) : 'N/A'}</td>
+                </tr>
+                <tr>
+                  <th>Saldo</th>
+                  <td>${accountData.Saldo ? accountData.Saldo.toFixed(2) : 'N/A'}</td>
                 </tr>
               </tbody>
             </table>

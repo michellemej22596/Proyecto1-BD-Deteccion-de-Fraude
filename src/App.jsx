@@ -1,7 +1,6 @@
-// App.jsx
 import { useState, useEffect } from 'react';
 import { IoMenu } from 'react-icons/io5';
-import SearchBar from '@components/SearchBar'; 
+import SearchBarClients from '@components/SearchBarClients'; 
 import NavBar from '@components/Navbar';
 import Banner from '@components/Banner'; 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Cambiado Switch por Routes
@@ -18,6 +17,10 @@ import ReadAccount from '@views/Read_Account';
 import UpdateAccount from '@views/Update_Account';
 import StatusAccount from '@views/Status_Account';
 import BalanceAccount from '@views/Balance_Account';
+import SearchCard from '@views/SearchCard';
+import CreateCard from '@views/CreateCard';
+import ReadCard from '@views/ReadCard';
+import DeleteCard from '@views/DeleteCard';
 
 import './App.css';
 
@@ -51,7 +54,7 @@ function App() {
   <Router>
     <header className="header">
       <IoMenu className="menu-icon" onClick={() => setShowNav(!showNav)} />
-      <SearchBar />
+      <SearchBarClients />
     </header>
 
     <NavBar show={showNav} />
@@ -70,6 +73,12 @@ function App() {
         <Route path="/account/update" element={<UpdateAccount />} />
         <Route path="/account/status" element={<StatusAccount />} />
         <Route path="/account/balance" element={<BalanceAccount />} />
+
+
+        <Route path="/card/search" element={<SearchCard />} />
+        <Route path="/card/create" element={<CreateCard />} />
+        <Route path="/card/read" element={<ReadCard />} />
+        <Route path="/card/delete" element={<DeleteCard />} />
       </Routes>
     </div>
     <Footer />

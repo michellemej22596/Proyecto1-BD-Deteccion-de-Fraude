@@ -5,6 +5,7 @@ import api from '../api';
 
 const Create = () => {
   const [clientData, setClientData] = useState({
+    cliente_id: '',  // Aquí puedes dejar el campo vacío si el cliente_id es autogenerado.
     nombre: '',
     edad: '',
     pais: '',
@@ -16,9 +17,10 @@ const Create = () => {
   const [success, setSuccess] = useState(false);
 
   const validateForm = () => {
+    // Verifica que todos los campos requeridos estén completos.
     for (let key in clientData) {
-      if (!clientData[key]) {
-        return `Por favor, completa el campo ${key}.`;
+      if (key !== 'cliente_id' && !clientData[key]) {
+        return `Por favor, completa el campo ${key}.`;  // No verifica cliente_id si es autogenerado
       }
     }
     return null;
@@ -38,15 +40,16 @@ const Create = () => {
     }
 
     try {
-      // Enviamos solo los datos sin incluir el cliente_id
+      // Realiza la solicitud POST al backend con los datos del cliente.
       const response = await api.post('/clientes/', clientData);
 
       if (response.status === 200 || response.status === 201) {
         setSuccess(true);
-        setClientData({ nombre: '', edad: '', pais: '', estado: '' });
+        // Limpia el formulario al completar exitosamente la creación.
+        setClientData({ cliente_id: '', nombre: '', edad: '', pais: '', estado: '' });
       }
     } catch (error) {
-      console.error('Error details:', error);
+      console.error('Detalles del error:', error);
       if (error.response) {
         setError(`Error: ${error.response.data.message || 'Error desconocido'}`);
       } else if (error.request) {
@@ -69,6 +72,19 @@ const Create = () => {
       {success && <div className="bg-green-500 text-white p-2 rounded mb-4">Cliente creado exitosamente</div>}
 
       <form onSubmit={handleSubmit} className="mb-6">
+        {/* Campo para ingresar el cliente_id (solo si es necesario) */}
+        <div className="mb-4">
+          <p className="custom-input-label text-lg font-semibold text-gray-700 mb-1">Cliente ID</p>
+          <input
+            type="number"
+            value={clientData.cliente_id}
+            onChange={(e) => setClientData({ ...clientData, cliente_id: e.target.value })}
+            placeholder="Escriba el Cliente ID..."
+            className="w-full my-3 rounded-lg bg-stone-900 p-4 border-2 border-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-400 text-xl text-white"
+          />
+        </div>
+
+        {/* Campo para ingresar el nombre */}
         <div className="mb-4">
           <p className="custom-input-label text-lg font-semibold text-gray-700 mb-1">Nombre del Cliente</p>
           <input
@@ -80,6 +96,7 @@ const Create = () => {
           />
         </div>
 
+        {/* Campo para ingresar la edad */}
         <div className="mb-4">
           <p className="custom-input-label text-lg font-semibold text-gray-700 mb-1">Edad</p>
           <input
@@ -91,6 +108,7 @@ const Create = () => {
           />
         </div>
 
+        {/* Campo para ingresar el país */}
         <div className="mb-4">
           <p className="custom-input-label text-lg font-semibold text-gray-700 mb-1">País</p>
           <input
@@ -102,6 +120,7 @@ const Create = () => {
           />
         </div>
 
+        {/* Campo para ingresar el estado */}
         <div className="mb-4">
           <p className="custom-input-label text-lg font-semibold text-gray-700 mb-1">Estado</p>
           <input
@@ -113,6 +132,7 @@ const Create = () => {
           />
         </div>
 
+        {/* Botón de submit */}
         <div className="mb-4">
           <button
             type="submit"
