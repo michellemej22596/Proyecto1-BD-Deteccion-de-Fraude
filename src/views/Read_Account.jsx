@@ -1,37 +1,34 @@
 import React, { useState } from 'react';
 import ReadABanner from './../assets/ReadABanner.png';
 import '../App.css';
-import api from '../api'; // Importa la instancia de api
+import api from '../api';
 
 const ReadAccount = () => {
-  const [cuentaId, setCuentaId] = useState(''); // Estado para el ID de la cuenta
-  const [accountData, setAccountData] = useState(null); // Estado para los datos de la cuenta
-  const [loading, setLoading] = useState(false); // Estado para el cargado
-  const [error, setError] = useState(null); // Estado para el error
+  const [cuentaId, setCuentaId] = useState('');
+  const [accountData, setAccountData] = useState(null); 
+  const [loading, setLoading] = useState(false); 
+  const [error, setError] = useState(null); 
 
-  // Función para manejar el envío del formulario y hacer la llamada a la API
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Evitar que se recargue la página al enviar el formulario
-    setLoading(true); // Habilitar el estado de carga
-    setError(null); // Limpiar cualquier error previo
-    setAccountData(null); // Limpiar los datos previos
+    e.preventDefault(); 
+    setLoading(true); 
+    setError(null); 
+    setAccountData(null); 
 
     try {
-      // Realizar la solicitud a la API usando el ID de la cuenta
       const response = await api.get(`/cuentas/${cuentaId}`);
       
-      // Verifica el estado de la respuesta
       if (response.status === 200) {
-        console.log('Datos de la cuenta recibidos:', response.data); // Depuración: log de la respuesta
-        setAccountData(response.data); // Establecer los datos de la cuenta si la respuesta es exitosa
+        console.log('Datos de la cuenta recibidos:', response.data); 
+        setAccountData(response.data);
       } else {
         setError('No se pudo obtener la cuenta.');
       }
     } catch (err) {
-      setError('No se encontró la cuenta con ese ID.'); // Mostrar error si no se encuentra la cuenta
-      console.error('Error al obtener la cuenta:', err); // Depuración: log del error
+      setError('No se encontró la cuenta con ese ID.'); 
+      console.error('Error al obtener la cuenta:', err); 
     } finally {
-      setLoading(false); // Deshabilitar el estado de carga
+      setLoading(false); 
     }
   };
 
@@ -56,7 +53,7 @@ const ReadAccount = () => {
             required
           />
         </div>
-        <button type="submit" disabled={loading} className="read-button">
+        <button type="submit" disabled={loading} className="read-button w-full py-2 px-4 rounded-lg bg-blue-500 text-white">
           {loading ? <div className="loader"></div> : 'Buscar Cuenta'}
         </button>
       </form>
@@ -72,7 +69,7 @@ const ReadAccount = () => {
               <tbody>
                 <tr>
                   <th>Tipo</th>
-                  <td>{accountData.Tipo}</td>
+                  <td>{accountData.Tipo || 'N/A'}</td>
                 </tr>
                 <tr>
                   <th>Saldo</th>
@@ -80,11 +77,11 @@ const ReadAccount = () => {
                 </tr>
                 <tr>
                   <th>Estado</th>
-                  <td>{accountData.Estado}</td>
+                  <td>{accountData.Estado || 'N/A'}</td>
                 </tr>
                 <tr>
                   <th>Cuenta ID</th>
-                  <td>{accountData.Cuenta_ID}</td>
+                  <td>{accountData.Cuenta_ID || 'N/A'}</td>
                 </tr>
               </tbody>
             </table>

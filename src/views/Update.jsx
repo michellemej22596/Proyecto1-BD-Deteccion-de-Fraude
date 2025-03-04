@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BannerUpdate from '../assets/BannerUpdate.png';
+import '../App.css';
 import api from '../api';
 
 const UpdateAccount = () => {
@@ -74,16 +75,9 @@ const UpdateAccount = () => {
           />
         </div>
 
-        <div className="mb-4">
-          <button
-            type="button"
-            onClick={fetchAccountData}
-            disabled={loading}
-            className={`w-full p-2 rounded-lg text-white ${loading ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'}`}
-          >
-            {loading ? 'Cargando...' : 'Buscar Cuenta'}
-          </button>
-        </div>
+        <button type="button" onClick={fetchAccountData} disabled={loading} className="read-button">
+          {loading ? <div className="loader"></div> : 'Buscar Cuenta'}
+        </button>
 
         {accountData && (
           <div className="mt-4">
@@ -113,15 +107,9 @@ const UpdateAccount = () => {
               />
             </div>
 
-            <div className="mb-4">
-              <button
-                type="submit"
-                disabled={loading}
-                className={`w-full p-2 rounded-lg text-white ${loading ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'}`}
-              >
-                {loading ? 'Cargando...' : 'Actualizar Cuenta'}
-              </button>
-            </div>
+            <button type="submit" disabled={loading} className="read-button">
+              {loading ? <div className="loader"></div> : 'Actualizar Cuenta'}
+            </button>
           </div>
         )}
       </form>
