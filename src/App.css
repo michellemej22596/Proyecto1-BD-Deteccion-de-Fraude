@@ -13,9 +13,8 @@ header {
   justify-content: start; /* Asegura que los elementos estén alineados a la izquierda */
   padding: 15px 30px;
   background: #ffead9;
-  height: 60px;
+  height: 70px;
   position: relative; /* Cambiado de 'absolute' a 'relative' para evitar superposiciones */
-  z-index: 2; /* Asegura que el menú se muestre encima del contenido */
 }
 
 .menu-icon {
@@ -45,6 +44,17 @@ header {
   left: 0;
   width: 130px
 }
+
+/* Estilo para el submenú de Accounts */
+.sidenav ul li ul {
+  padding-left: 20px; 
+}
+
+
+.sidenav ul li ul li {
+  margin-left: 10px; 
+}
+
 
 .logo {
   width: 130px
@@ -86,13 +96,11 @@ font-size: 40px;
 }
 
 .main {
-  height: 90vh;
-  display: flex;
+  height: 100vh;
   align-items: center; /* Centra el contenido verticalmente */
   font-size: 40px;
   color: #c9c9c9;
   text-align: center;
-  margin-top: 50px; /* Asegura espacio debajo del banner */
 }
 
 .loader-container {
@@ -111,7 +119,6 @@ font-size: 40px;
 
 .banner {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  padding: 40px;
   text-align: center;
 }
 
@@ -130,8 +137,7 @@ font-size: 40px;
 }
 
 .banner-container {
-  padding-top: 150px;
-  padding-bottom: 20px; 
+  
   position: relative;
 }
 
@@ -314,7 +320,7 @@ input:focus {
   justify-content: center; 
   min-height: 100vh; 
   text-align: center;
-  width: 100%; /* Asegura que ocupe toda la pantalla */
+  width: 96.81%; /* Asegura que ocupe toda la pantalla */
 }
 
 .bank-account > div {
@@ -323,7 +329,7 @@ input:focus {
   padding: 20px;
   width: 80%;
   max-width: 800px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 1000px #603e3d;
   margin: 10px auto; 
   text-align: center;
 }
@@ -377,4 +383,40 @@ input:focus {
   font-weight: bold;
   color: #603e3d;
   text-align: center;
+}
+
+
+.accounts-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 35px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.row.center {
+  justify-content: center;
+}
+
+.custom-button {
+  background-color: #e8d3c2;
+  color: #4a3131;
+  padding: 30px 10px;
+  font-size: 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: bold;
+}
+
+.custom-button:hover {
+  background-color: #e8b9a7;
+  box-shadow: 0 0 60px #d09077; 
 }

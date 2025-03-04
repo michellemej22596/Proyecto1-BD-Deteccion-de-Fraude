@@ -34,7 +34,7 @@ const Read = () => {
   };
 
   return (
-    <div className="custom-container max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
+    <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
       <div className="text-center mb-6">
         <img src={BannerRead} alt="Banner Leer Cliente" className="bannersCRUD" />
       </div>

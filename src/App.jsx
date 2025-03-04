@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { IoMenu } from 'react-icons/io5';
 import SearchBar from '@components/SearchBar'; 
-import NavBar from '@components/Navbar'; 
+import NavBar from '@components/Navbar';
 import Banner from '@components/Banner'; 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Cambiado Switch por Routes
 import Footer from '@components/Footer'; 
@@ -13,6 +13,12 @@ import Read from '@views/Read';
 import Update from '@views/Update';
 import Delete from '@views/Delete';
 import BankAccount from '@views/BankAccount';
+import CreateAccount from '@views/Create_Account';
+import ReadAccount from '@views/Read_Account';
+import UpdateAccount from '@views/Update_Account';
+import StatusAccount from '@views/Status_Account';
+import BalanceAccount from '@views/Balance_Account';
+
 import './App.css';
 
 function App() {
@@ -59,6 +65,11 @@ function App() {
         <Route path="/delete" element={<Delete />} />  
         <Route path="/bankaccount/:clientId" element={<BankAccount />} /> 
         
+        <Route path="/account/create" element={<CreateAccount />} />
+        <Route path="/account/read" element={<ReadAccount />} />
+        <Route path="/account/update" element={<UpdateAccount />} />
+        <Route path="/account/status" element={<StatusAccount />} />
+        <Route path="/account/balance" element={<BalanceAccount />} />
       </Routes>
     </div>
     <Footer />
