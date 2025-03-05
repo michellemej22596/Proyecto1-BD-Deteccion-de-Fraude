@@ -13,6 +13,13 @@ def obtener_transacciones_service(cliente_id: int):
     """
     return db.query(query,  {"cliente_id": cliente_id})
 
+def obtener_transacciones_serviceT(transaccion_id: int):
+    query = """
+    MATCH (t:Transaccion {Transaccion_ID: $transaccion_id})
+    RETURN t;
+    """
+    return db.query(query,  {"transaccion_id": transaccion_id})
+
 def agregar_transaccion_service(transaccion_id, monto, cuenta_origen_id, cuenta_destino_id, tipo, canal):
     query = """
     MATCH (cuenta_origen:CuentaBancaria {Cuenta_ID: $cuenta_origen_id}),
