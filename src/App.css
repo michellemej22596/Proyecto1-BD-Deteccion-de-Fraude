@@ -32,7 +32,7 @@ header {
   width: 300px;
   background: #ffead9; /* fondo del navbar */
   position: absolute;
-  height: 180vh;
+  height: 240vh;
   padding: 0 100px;
   left: -100%;
   transition: all 1s;
