@@ -11,7 +11,7 @@ const CreateAccount = () => {
   const [estado, setEstado] = useState('');
   const [fechaApertura, setFechaApertura] = useState('');
   const [clienteId, setClienteId] = useState('');
-  
+
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -22,22 +22,40 @@ const CreateAccount = () => {
     setSuccessMessage('');
     setErrorMessage('');
 
+    // Validación básica de los datos
+    if (!cuentaId || !tipo || !saldo || !estado || !fechaApertura || !clienteId) {
+      setErrorMessage('Todos los campos son obligatorios');
+      setLoading(false);
+      return;
+    }
+
     const newAccount = {
-      cuenta_id: cuentaId,
+      cuenta_id: parseInt(cuentaId), // Asegúrate de que sea un número
       tipo: tipo,
-      saldo: saldo,
+      saldo: parseFloat(saldo), // Asegúrate de que sea un número con decimales
       estado: estado,
       fecha_apertura: fechaApertura,
-      cliente_id: clienteId,
+      cliente_id: parseInt(clienteId),
     };
 
     try {
       const response = await api.post('/cuentas/', newAccount);
       if (response.status === 200) {
         setSuccessMessage('La cuenta ha sido creada exitosamente.');
+        // Limpiar el formulario después de una respuesta exitosa
+        setCuentaId('');
+        setTipo('');
+        setSaldo('');
+        setEstado('');
+        setFechaApertura('');
+        setClienteId('');
       }
     } catch (error) {
-      setErrorMessage('No se pudo crear la cuenta. Verifica los datos.');
+      if (error.response && error.response.status === 422) {
+        setErrorMessage('Error de validación: ' + error.response.data.detail[0].msg);
+      } else {
+        setErrorMessage('No se pudo crear la cuenta. Verifica los datos.');
+      }
     } finally {
       setLoading(false);
     }

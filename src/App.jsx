@@ -21,6 +21,13 @@ import SearchCard from '@views/SearchCard';
 import CreateCard from '@views/CreateCard';
 import ReadCard from '@views/ReadCard';
 import DeleteCard from '@views/DeleteCard';
+import SearchTransacc from '@views/SearchTransacc';
+import ReadTransacc from '@views/ReadTransacc';
+import CreateTransacc from '@views/CreateTransacc';
+import DetectFraud from '@views/DetectFraud';
+import ConnectionFraud from '@views/ConnectionFraud';
+import RecurringFraud from '@views/RecurringFraud';
+import SupiciousFraud from '@views/SupiciousFraud';
 
 import './App.css';
 
@@ -74,11 +81,19 @@ function App() {
         <Route path="/account/status" element={<StatusAccount />} />
         <Route path="/account/balance" element={<BalanceAccount />} />
 
-
         <Route path="/card/search" element={<SearchCard />} />
         <Route path="/card/create" element={<CreateCard />} />
         <Route path="/card/read" element={<ReadCard />} />
         <Route path="/card/delete" element={<DeleteCard />} />
+
+        <Route path="/transactions/search" element={<SearchTransacc />} />
+        <Route path="/transactions/create" element={<CreateTransacc />} />
+        <Route path="/transactions/read" element={<ReadTransacc />} />
+
+        <Route path="/fraud/detect" element={<DetectFraud />} />
+        <Route path="/fraud/connections" element={<ConnectionFraud />} />
+        <Route path="/fraud/recurring" element={<RecurringFraud />} />
+        <Route path="/fraud/Suspicious" element={<SupiciousFraud />} />
       </Routes>
     </div>
     <Footer />
