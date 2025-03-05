@@ -25,4 +25,4 @@ app.include_router(modelo.router, prefix="/modelo", tags=["Modelos de Data Scien
 
 @app.get("/")
 def home():
-    return {"message": "Bienvenido a la API de Detección de Fraude"}
+    return {"message": "Bienvenido a la API de Detección de Fraude Revivida"}
