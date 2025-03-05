@@ -1,16 +1,17 @@
 from app.database import db
 from typing import Optional
 
-def obtener_transacciones_service(cliente_id: str):
-    query = """
-    MATCH (c:Cliente {Cliente_ID: $cliente_id})-[:POSEE]->(cu:CuentaBancaria)-[:REALIZA]->(t:Transaccion)
-    RETURN t ORDER BY t.Fecha DESC LIMIT 20;
-    """
-    return db.query(query)
 
 def buscar_transacciones_por_tipo_service(tipo: Optional[str] = None):
     query = "MATCH (t:Transaccion) WHERE t.Tipo = $tipo RETURN t ORDER BY t.Fecha DESC LIMIT 20;"
     return db.query(query, {"tipo": tipo})
+
+def obtener_transacciones_service(cliente_id: int):
+    query = """
+    MATCH (c:Cliente {Cliente_ID: $cliente_id})-[:POSEE]->(cu:CuentaBancaria)-[:REALIZA]->(t:Transaccion)
+    RETURN t ORDER BY t.Fecha DESC LIMIT 20;
+    """
+    return db.query(query,  {"cliente_id": cliente_id})
 
 def agregar_transaccion_service(transaccion_id, monto, cuenta_origen_id, cuenta_destino_id, tipo, canal):
     query = """
@@ -26,9 +27,5 @@ def agregar_transaccion_service(transaccion_id, monto, cuenta_origen_id, cuenta_
         "cuenta_origen_id": cuenta_origen_id, "cuenta_destino_id": cuenta_destino_id,
         "tipo": tipo, "canal": canal
     })
-
-    if not result:
-        return {"error": "No se pudo crear la Transaccion. Verifica que las cuentas de origen y destino existan."}
-
-    return result[0]
+    return result
 
