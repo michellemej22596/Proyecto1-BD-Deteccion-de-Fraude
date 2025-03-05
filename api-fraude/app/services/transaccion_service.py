@@ -6,7 +6,7 @@ def obtener_transacciones_service(cliente_id: str):
     MATCH (c:Cliente {Cliente_ID: $cliente_id})-[:POSEE]->(cu:CuentaBancaria)-[:REALIZA]->(t:Transaccion)
     RETURN t ORDER BY t.Fecha DESC LIMIT 20;
     """
-    return db.query(query, {"cliente_id": cliente_id})
+    return db.query(query)
 
 def buscar_transacciones_por_tipo_service(tipo: Optional[str] = None):
     query = "MATCH (t:Transaccion) WHERE t.Tipo = $tipo RETURN t ORDER BY t.Fecha DESC LIMIT 20;"
